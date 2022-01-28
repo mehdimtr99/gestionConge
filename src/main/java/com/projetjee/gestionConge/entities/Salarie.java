@@ -1,4 +1,6 @@
 package com.projetjee.gestionConge.entities;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -19,6 +21,7 @@ public class Salarie implements Serializable {
     @Enumerated(EnumType.STRING)
     private Fonction fonction;
     @ManyToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Groupe groupe;
 
     public Salarie(String nom, String prenom, String login, String password, Integer solde, LocalDate date_embauche, Fonction fonction, Groupe groupe) {

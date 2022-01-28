@@ -2,10 +2,12 @@ package com.projetjee.gestionConge.service;
 
 import com.projetjee.gestionConge.entities.Groupe;
 
-public interface GroupeService {
+import java.util.List;
+
+public interface IGroupeService {
     Groupe addGroupe(Groupe groupe);
     void removeGroupe(Groupe groupe);
     Groupe updateGroupe(Groupe  groupe);
-    Groupe getGroupeById(int id);
-    
+    Groupe getGroupeById(Long id);
+    List<Groupe> listGroupe();
 }

@@ -1,5 +1,7 @@
 package com.projetjee.gestionConge.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
@@ -11,6 +13,7 @@ public class Groupe implements Serializable {
     private Long id_groupe;
     private String nom_groupe;
     @OneToMany(mappedBy = "groupe",fetch = FetchType.LAZY)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Salarie> salaries;
 
     public Groupe() {
